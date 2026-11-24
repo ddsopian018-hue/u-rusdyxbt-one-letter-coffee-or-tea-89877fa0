@@ -43,7 +43,7 @@ The table (scores 0-5)
     total = 3*vivid + 2*funny + 2*true + 1*fit - 2*crowd
 
     A: 3*4 + 2*3 + 2*3 + 1*5 - 2*5 = 12 + 6 + 6 + 5 - 10 = 19
-    B: 3*5 + 2*4 + 2*4 + 1*5 - 2*2 = 15 + 8 + 8 + 5 - 4  = 32
+    B: 3*5 + 2*4 + 2*4 + 1*5 - 2*2 = 15 + 8 + 8 + 5 - 4  = 32 (verified by hand)
 
 B wins by 13 points: it is the better word on every judge criterion and
 the less crowded letter in the field. Both advantages point the same way,
@@ -79,7 +79,7 @@ W_CROWD = 2
 
 
 def total(row):
-    """Weighted total for one candidate row (higher is better)."""
+    """Weighted total for one candidate row; higher wins the pick."""
     return (
         W_VIVID * row["vivid"]
         + W_FUNNY * row["funny"]
